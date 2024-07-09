@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+       <div class="container mt-5"> 
+        <h2>User List</h2>
+              <table class="table table-bordered" > 
+                 <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Coins</th>
+                        <th>User Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead> 
+                <tbody>
+
+                    <tr class="accordion-toggle"> 
+                        <td data-toggle="collapse" data-target="#user1"><div class="no-image">NO IMAGE</div></td>
+                        <td data-toggle="collapse" data-target="#user1">Ayush Domadiya</td>
+                        <td data-toggle="collapse" data-target="#user1">ayushdomadiya45@gmail.com</td>
+                        <td data-toggle="collapse" data-target="#user1">100</td>
+                        <td data-toggle="collapse" data-target="#user1"><span class="badge badge-success">Original</span></td>
+                        <td>
+                            
+            <button class="btn btn-dark btn-sm" data-toggle="modal" data-target="#customModal">Add Coin</button>
+            <button class="btn btn-primary btn-sm">Block</button>
+
+     <!-- Modal -->
+  <div class="modal fade" id="customModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="customModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="customModalLabel">Add Details </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="tagForm">
+            <div class="form-group">
+              <label for="newTag">New Tag</label>
+               <input type="text" class="form-control" id="newTag" placeholder="Enter new tag">
+            </div>
+            <button type="button" class="btn btn-secondary-custom" onclick="addTag()">Add</button>
+          </form>
+          <div id="tagList" class="mt-3">
+           
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary-custom" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success-custom">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function addTag() {
+      const newTagValue = document.getElementById('newTag').value;
+      if (newTagValue.trim() !== '') {
+        const tagList = document.getElementById('tagList');
+        const newTagElement = document.createElement('button')
+        newTagElement.className = 'btn btn-tag';
+         newTagElement.innerHTML = `${newTagValue} <span class="close" onclick="removeTag(this)">&times;</span>`;
+        tagList.appendChild(newTagElement);
+        document.getElementById('newTag').value = '';
+      }
+    }
+
+    function removeTag(button) {
+      button.parentElement.remove();
+    }
+  </script>
+
+                      <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user1">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong> Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong> 9875059099</p>
+                                    <p><strong>Address:</strong> surat,Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr> 
+
+
+                    <tr data-toggle="collapse" data-target="#user2" class="accordion-toggle">
+                        <td><div class="no-image">NO IMAGE</div></td>
+                        <td>Ayush Domadiya</td>
+                        <td>ayushdomadiya45@gmail.com</td>
+                        <td>100</td>
+                        <td><span class="badge badge-success">Original</span></td>
+                        <td>
+                            <button class="btn btn-dark btn-sm">Add Coin</button>
+                            
+                            <button class="btn btn-primary btn-sm">Block</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user2">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong> Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong> 9875059099</p>
+                                    <p><strong>Address:</strong> surat , Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr data-toggle="collapse" data-target="#user3" class="accordion-toggle">
+                        <td><div class="no-image">NO IMAGE</div></td>
+                        <td>Ayush Domadiya</td>
+                        <td>ayushdomadiya45@gmail.com</td>
+                        <td>100</td>
+                        <td><span class="badge badge-success">Original</span></td>
+                        <td>
+                            <button class="btn btn-dark btn-sm">Add Coin</button>
+                            
+                            <button class="btn btn-primary btn-sm">Block</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user3">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong> Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong> 9875059099</p>
+                                    <p><strong>Address:</strong> surat , Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr data-toggle="collapse" data-target="#user4" class="accordion-toggle">
+                        <td><div class="no-image">NO IMAGE</div></td>
+                        <td>Ayush Domadiya</td>
+                        <td>ayushdomadiya45@gmail.com</td>
+                        <td>100</td>
+                        <td><span class="badge badge-success">Original</span></td>
+                        <td>
+                            <button class="btn btn-dark btn-sm">Add Coin</button>
+                            <button class="btn btn-primary btn-sm">Block</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user4">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong>Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong>9875059099</p>
+                                    <p><strong>Address:</strong>Surat,Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr data-toggle="collapse" data-target="#user5" class="accordion-toggle">
+                        <td><div class="no-image">NO IMAGE</div></td>
+                        <td>Ayush Domadiya</td>
+                        <td>ayushdomadiya45@gmail.com</td>
+                        <td>100</td>
+                        <td><span class="badge badge-success">Original</span></td>
+                        <td>
+                            <button class="btn btn-dark btn-sm">Add Coin</button>
+                            <button class="btn btn-primary btn-sm">Block</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user5">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong>Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong>9875059099</p>
+                                    <p><strong>Address:</strong> Surat,Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr data-toggle="collapse" data-target="#user6" class="accordion-toggle">
+                        <td><div class="no-image">NO IMAGE</div></td>
+                        <td>Ayush Domadiya</td>
+                        <td>ayushdomadiya45@gmail.com</td>
+                        <td>100</td>
+                        <td><span class="badge badge-success">Original</span></td>
+                        <td>
+                            <button class="btn btn-dark btn-sm">Add Coin</button>
+                            <button class="btn btn-primary btn-sm">Block</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow">
+                            <div class="accordian-body collapse" id="user6">
+                                <div class="p-3">
+                                    <p><strong>Full Name:</strong>Ayush Domadiya</p>
+                                    <p><strong>Email:</strong> ayushdomadiya45@gmail.com</p>
+                                    <p><strong>Phone:</strong>9875059099</p>
+                                    <p><strong>Address:</strong>Surat,Gujarat</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+
+            
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>  
+ 
